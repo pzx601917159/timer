@@ -53,9 +53,13 @@ WheelTimer::WheelTimer()
     InitTimer();
 }
 
-//析构
+//析构,删除创建的轮子
 WheelTimer::~WheelTimer()
 {
+    for(WheelList::iterator it = m_wheelList.begin(); it != m_wheelList.end(); ++it)
+    {
+        delete *it;
+    }
     delete m_node;
 }
 

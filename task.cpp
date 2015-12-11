@@ -6,12 +6,15 @@
  ********************************************************************/
 
 #include "task.h"
+#include "timer.h"
 #include <stdio.h>
 #include <time.h>
 
-void Task::OnTask()
+void Task::OnTask(Timer* timer)
 {
     printf("==================On Task!\n");
     time_t t = time(NULL);
     printf("shijian: %s\n",ctime(&t));
+    //删除这个定时器
+    delete timer;
 }

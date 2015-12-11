@@ -23,6 +23,11 @@ Wheel::Wheel(uint32_t size,uint32_t time)
 //析构
 Wheel::~Wheel()
 {
+    //删除创建的槽
+    for(WheelNodeArray::iterator it = m_nodes.begin(); it != m_nodes.end(); ++it)
+    {
+        delete *it;
+    }
 }
 
 //获取单元时间

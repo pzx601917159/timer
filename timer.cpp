@@ -19,7 +19,7 @@ Timer::Timer(Task* task,uint32_t remain)
     m_next = NULL;
 }
  
-//析构
+//析构,删除的时候同时从槽中删除这个定时器
 Timer::~Timer()
 {
     if(m_node != NULL)
@@ -68,7 +68,7 @@ void Timer::OnTimer()
 {
     if(m_task != NULL)
     {
-        m_task->OnTask();
+        m_task->OnTask(this);
     }
 }
 

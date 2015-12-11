@@ -7,9 +7,10 @@
 
 #ifndef _TASK_H
 #define _TASK_H
+class Timer;
 class Task
 {
     public:
-    virtual void OnTask();
+    virtual void OnTask(Timer* timer);
 };
 #endif //_TASK_H
